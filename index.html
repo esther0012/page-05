@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>R$8.000 Por Mês Com Imóvel — Referência Capital</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --preto: #04080a;
+    --verde: #081c12;
+    --verde2: #0d2b1e;
+    --verde3: #153b28;
+    --ouro: #c9a84c;
+    --ouro-claro: #e8c96e;
+    --ouro-fade: rgba(201,168,76,0.08);
+    --branco: #f5f2eb;
+    --cinza: #807b74;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--preto); color: var(--branco); }
+
+  /* NAV */
+  nav { padding: 24px 72px; display: flex; justify-content: space-between; align-items: center; }
+  .brand { display: flex; align-items: center; gap: 12px; }
+  .brand-ring { width: 32px; height: 32px; border-radius: 50%; border: 1.5px solid var(--ouro); display: flex; align-items: center; justify-content: center; }
+  .brand-ring-dot { width: 8px; height: 8px; background: var(--ouro); border-radius: 50%; }
+  .brand-name { font-family: 'Syne', sans-serif; font-size: 17px; font-weight: 700; color: var(--branco); }
+  .btn-nav { background: var(--ouro); color: var(--preto); font-size: 13px; font-weight: 600; padding: 10px 22px; border: none; cursor: pointer; font-family: 'DM Sans', sans-serif; transition: background 0.2s; }
+  .btn-nav:hover { background: var(--ouro-claro); }
+
+  /* HERO — BOLD CENTERED */
+  .hero { padding: 120px 72px 80px; text-align: center; position: relative; }
+  .hero-lines { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
+  .hero-line { position: absolute; top: 0; bottom: 0; width: 1px; background: rgba(201,168,76,0.04); }
+  .eyebrow-row { display: flex; align-items: center; justify-content: center; gap: 16px; margin-bottom: 32px; }
+  .eyebrow-line { flex: 1; max-width: 80px; height: 1px; background: rgba(201,168,76,0.3); }
+  .eyebrow { font-size: 12px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--ouro); }
+  .hero-big-number { font-family: 'Syne', sans-serif; font-size: clamp(80px, 15vw, 180px); font-weight: 800; line-height: 0.9; color: var(--ouro-claro); letter-spacing: -3px; margin-bottom: 4px; }
+  .hero-number-label { font-family: 'Syne', sans-serif; font-size: clamp(20px, 3vw, 34px); font-weight: 600; color: rgba(248,245,235,0.5); margin-bottom: 32px; letter-spacing: -0.5px; }
+  .hero-desc { font-size: clamp(16px, 2vw, 21px); font-weight: 300; color: rgba(248,245,235,0.62); max-width: 680px; margin: 0 auto 52px; line-height: 1.65; }
+  .hero-desc strong { color: var(--branco); font-weight: 500; }
+  .btn-hero { display: inline-block; background: var(--ouro); color: var(--preto); font-size: 17px; font-weight: 600; padding: 20px 52px; text-decoration: none; transition: background 0.2s; border: none; cursor: pointer; font-family: 'DM Sans', sans-serif; }
+  .btn-hero:hover { background: var(--ouro-claro); }
+  .hero-micro { font-size: 13px; color: var(--cinza); margin-top: 16px; }
+  .hero-visual { max-width: 640px; margin: 72px auto 0; background: var(--verde2); border: 1px solid rgba(201,168,76,0.15); padding: 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 24px; text-align: left; }
+  .hv-item {}
+  .hv-label { font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px; color: var(--cinza); margin-bottom: 8px; }
+  .hv-val { font-family: 'Syne', sans-serif; font-size: 28px; font-weight: 700; color: var(--branco); }
+  .hv-val.gold { color: var(--ouro-claro); }
+  .hv-sub { font-size: 13px; color: var(--cinza); margin-top: 4px; }
+  .hv-divider { grid-column: span 2; height: 1px; background: rgba(201,168,76,0.1); }
+
+  /* THE MATH */
+  .math { padding: 100px 72px; background: var(--verde); }
+  .math-inner { max-width: 900px; margin: 0 auto; }
+  .section-ey { font-size: 11px; text-transform: uppercase; letter-spacing: 3px; color: var(--ouro); font-weight: 600; margin-bottom: 20px; }
+  h2 { font-family: 'Syne', sans-serif; font-size: clamp(32px, 4vw, 54px); font-weight: 800; color: var(--branco); margin-bottom: 48px; line-height: 1.05; letter-spacing: -0.5px; }
+  .math-grid { display: grid; grid-template-columns: 1fr 1px 1fr; gap: 48px; align-items: center; }
+  .math-side { }
+  .math-divider-line { background: rgba(201,168,76,0.15); }
+  .math-title { font-size: 13px; text-transform: uppercase; letter-spacing: 2px; color: var(--cinza); margin-bottom: 28px; font-weight: 600; }
+  .math-item { display: flex; justify-content: space-between; align-items: baseline; padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
+  .math-item-label { font-size: 14px; color: var(--cinza); }
+  .math-item-val { font-family: 'Syne', sans-serif; font-size: 20px; font-weight: 700; color: var(--branco); }
+  .math-item.total { border-bottom: none; border-top: 1px solid rgba(201,168,76,0.2); padding-top: 20px; margin-top: 4px; }
+  .math-item.total .math-item-label { font-weight: 600; color: var(--branco); font-size: 15px; }
+  .math-item.total .math-item-val { color: var(--ouro-claro); font-size: 28px; }
+  .math-profit { background: rgba(201,168,76,0.06); border: 1px solid rgba(201,168,76,0.2); padding: 28px; margin-top: 24px; display: flex; justify-content: space-between; align-items: center; }
+  .mp-label { font-size: 13px; color: var(--cinza); }
+  .mp-val { font-family: 'Syne', sans-serif; font-size: 36px; font-weight: 800; color: var(--ouro-claro); }
+
+  /* TIMELINE */
+  .timeline { padding: 100px 72px; }
+  .tl-inner { max-width: 840px; margin: 0 auto; }
+  .tl-items { display: flex; flex-direction: column; gap: 0; margin-top: 60px; }
+  .tl-item { display: grid; grid-template-columns: 120px 2px 1fr; gap: 0 28px; padding-bottom: 40px; }
+  .tl-item:last-child { padding-bottom: 0; }
+  .tl-time { text-align: right; padding-top: 4px; }
+  .tl-time-val { font-family: 'Syne', sans-serif; font-size: 22px; font-weight: 700; color: var(--ouro-claro); }
+  .tl-time-label { font-size: 12px; color: var(--cinza); margin-top: 2px; }
+  .tl-line { position: relative; }
+  .tl-line::before { content:''; position:absolute; top: 8px; left: 50%; transform: translateX(-50%); width: 12px; height: 12px; border-radius: 50%; background: var(--ouro); border: 2px solid var(--preto); z-index: 1; }
+  .tl-line::after { content:''; position:absolute; top: 8px; left: 50%; transform: translateX(-50%); width: 2px; background: rgba(201,168,76,0.2); top: 22px; bottom: -40px; }
+  .tl-item:last-child .tl-line::after { display: none; }
+  .tl-content { padding-top: 0; }
+  .tl-content h3 { font-family: 'Syne', sans-serif; font-size: 20px; font-weight: 700; color: var(--branco); margin-bottom: 8px; }
+  .tl-content p { font-size: 14px; color: var(--cinza); line-height: 1.65; }
+
+  /* COMPARE */
+  .compare { background: var(--verde2); padding: 100px 72px; }
+  .compare-inner { max-width: 900px; margin: 0 auto; }
+  .compare-table { margin-top: 60px; border: 1px solid rgba(201,168,76,0.12); }
+  .compare-header { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 0; background: rgba(201,168,76,0.06); }
+  .ch-cell { padding: 16px 20px; font-size: 12px; text-transform: uppercase; letter-spacing: 1.5px; color: var(--ouro); font-weight: 600; }
+  .ch-cell:not(:first-child) { text-align: center; border-left: 1px solid rgba(201,168,76,0.1); }
+  .compare-row { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 0; border-top: 1px solid rgba(255,255,255,0.04); }
+  .cr-cell { padding: 18px 20px; font-size: 14px; color: var(--cinza); }
+  .cr-cell:first-child { color: var(--branco); font-weight: 500; }
+  .cr-cell:not(:first-child) { text-align: center; border-left: 1px solid rgba(255,255,255,0.04); }
+  .cr-cell.good { color: var(--ouro-claro); font-weight: 600; }
+  .cr-cell.bad { color: rgba(255,100,100,0.7); }
+  .cr-cell.highlight-col { background: rgba(201,168,76,0.03); }
+
+  /* FORM */
+  .form-s { padding: 100px 72px; }
+  .form-s-inner { max-width: 640px; margin: 0 auto; }
+  .form-s h2 { margin-bottom: 12px; }
+  .form-s-sub { font-size: 18px; color: rgba(248,245,235,0.6); line-height: 1.65; margin-bottom: 48px; }
+  .form { display: flex; flex-direction: column; gap: 14px; }
+  .fi { background: rgba(255,255,255,0.04); border: 1px solid rgba(201,168,76,0.15); color: var(--branco); font-size: 15px; padding: 15px 18px; font-family: 'DM Sans', sans-serif; outline: none; transition: border-color 0.2s; width: 100%; }
+  .fi:focus { border-color: var(--ouro); }
+  .fi option { background: var(--verde); }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .btn-f { background: var(--ouro); color: var(--preto); font-size: 16px; font-weight: 700; padding: 20px; width: 100%; border: none; cursor: pointer; font-family: 'DM Sans', sans-serif; transition: background 0.2s; margin-top: 8px; }
+  .btn-f:hover { background: var(--ouro-claro); }
+  .form-disc { font-size: 12px; color: var(--cinza); text-align: center; margin-top: 12px; }
+
+  .iti {
+    width: 100%;
+  }
+
+  .phone-wrap {
+    width: 100%;
+  }
+
+  .iti input.fi,
+  .iti input[type="tel"] {
+    width: 100%;
+    height: 56px;
+    padding-left: 90px !important;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(201,168,76,0.15);
+    color: var(--branco);
+    font-size: 15px;
+    font-family: 'DM Sans', sans-serif;
+    outline: none;
+    box-sizing: border-box;
+  }
+
+  .iti input.fi:focus,
+  .iti input[type="tel"]:focus {
+    border-color: var(--ouro);
+  }
+
+  .iti__country-container {
+    left: 0;
+  }
+
+  .iti--separate-dial-code .iti__selected-flag {
+    background: transparent !important;
+    border-right: 1px solid rgba(201,168,76,0.12);
+    padding: 0 12px 0 14px;
+  }
+
+  .iti__selected-flag:hover,
+  .iti__selected-flag:focus,
+  .iti__selected-flag[aria-expanded="true"] {
+    background: rgba(255,255,255,0.03) !important;
+  }
+
+  .iti__selected-dial-code {
+    color: var(--branco);
+    font-size: 15px;
+    margin-left: 8px;
+  }
+
+  .iti__arrow {
+    border-top-color: var(--ouro);
+  }
+
+  .iti__country-list {
+    background: #0d2b1e !important;
+    border: 1px solid rgba(201,168,76,0.18) !important;
+    color: var(--branco) !important;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+    width: 100% !important;
+    max-width: 100%;
+    margin-top: 8px;
+  }
+
+  .iti__country {
+    color: var(--branco) !important;
+    padding: 10px 12px;
+  }
+
+  .iti__country:hover,
+  .iti__country.iti__highlight {
+    background: rgba(201,168,76,0.12) !important;
+  }
+
+  .iti__dial-code {
+    color: rgba(245,242,235,0.65) !important;
+  }
+
+  .iti__search-input {
+    background: rgba(255,255,255,0.04) !important;
+    border: 1px solid rgba(201,168,76,0.15) !important;
+    color: var(--branco) !important;
+    outline: none;
+  }
+
+  .iti__search-input::placeholder {
+    color: rgba(245,242,235,0.45);
+  }
+
+  .iti__divider {
+    border-bottom-color: rgba(201,168,76,0.12) !important;
+  }
+
+  footer { border-top: 1px solid rgba(201,168,76,0.07); padding: 28px 72px; display: flex; justify-content: space-between; font-size: 12px; color: var(--cinza); }
+
+  @media (max-width: 768px) {
+    nav { padding: 20px 24px; }
+    .hero { padding: 80px 24px 60px; }
+    .math { padding: 60px 24px; }
+    .math-grid { grid-template-columns: 1fr; }
+    .math-divider-line { height: 1px; width: 100%; }
+    .timeline { padding: 60px 24px; }
+    .tl-item { grid-template-columns: 80px 2px 1fr; }
+    .compare { padding: 60px 24px; }
+    .form-s { padding: 60px 24px; }
+    .form-row { grid-template-columns: 1fr; }
+    .hero-visual { padding: 24px; }
+    footer { flex-direction: column; gap: 10px; padding: 24px; }
+  }
+</style>
+  <!-- Meta Pixel -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;
+      n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];
+      t=b.createElement(e);t.async=!0;
+      t.src=v;
+      s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)
+    }(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
+
+    fbq('init', '1761905857999115');
+    fbq('init', '837741104784878');
+    fbq('track', 'PageView');
+  </script>
+
+  <noscript>
+    <img height="1" width="1" style="display:none"
+         src="https://www.facebook.com/tr?id=1761905857999115&ev=PageView&noscript=1"/>
+    <img height="1" width="1" style="display:none"
+         src="https://www.facebook.com/tr?id=837741104784878&ev=PageView&noscript=1"/>
+  </noscript>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/css/intlTelInput.css"/>
+</head>
+<body>
+
+<nav>
+  <div class="brand">
+    <div class="brand-ring"><div class="brand-ring-dot"></div></div>
+    <span class="brand-name">Referência Capital</span>
+  </div>
+  <button class="btn-nav" onclick="document.getElementById('form').scrollIntoView({behavior:'smooth'})">Consultoria gratuita →</button>
+</nav>
+
+<section class="hero">
+  <div class="hero-lines">
+    <div class="hero-line" style="left:20%"></div>
+    <div class="hero-line" style="left:40%"></div>
+    <div class="hero-line" style="left:60%"></div>
+    <div class="hero-line" style="left:80%"></div>
+  </div>
+  <div class="eyebrow-row">
+    <div class="eyebrow-line"></div>
+    <span class="eyebrow">Renda passiva real</span>
+    <div class="eyebrow-line"></div>
+  </div>
+  <div class="hero-big-number">R$8.000</div>
+  <div class="hero-number-label">por mês — caindo na sua conta</div>
+  <p class="hero-desc">Não é sorte. É estratégia. Um imóvel de R$400.000, bem escolhido e gerenciado, pode gerar <strong>R$8.000/mês</strong> com locação por temporada — enquanto você paga menos de R$3.000/mês de parcela.</p>
+  <button class="btn-hero" onclick="document.getElementById('form').scrollIntoView({behavior:'smooth'})">Quero montar minha estratégia</button>
+  <p class="hero-micro">Consultoria 100% gratuita · Para brasileiros no exterior</p>
+  <div class="hero-visual">
+    <div class="hv-item">
+      <div class="hv-label">Imóvel</div>
+      <div class="hv-val">R$400k</div>
+      <div class="hv-sub">Locação por temporada</div>
+    </div>
+    <div class="hv-item">
+      <div class="hv-label">Parcela do consórcio</div>
+      <div class="hv-val">-R$2.800</div>
+      <div class="hv-sub">Mensal, sem juros</div>
+    </div>
+    <div class="hv-divider"></div>
+    <div class="hv-item">
+      <div class="hv-label">Renda do aluguel</div>
+      <div class="hv-val gold">+R$8.000</div>
+      <div class="hv-sub">Média mensal estimada</div>
+    </div>
+    <div class="hv-item">
+      <div class="hv-label">Resultado líquido</div>
+      <div class="hv-val gold">+R$5.200</div>
+      <div class="hv-sub">Para você, todo mês</div>
+    </div>
+  </div>
+</section>
+
+<!-- THE MATH -->
+<section class="math">
+  <div class="math-inner">
+    <div class="section-ey">Os números</div>
+    <h2>A matemática que muda<br>o seu futuro</h2>
+    <div class="math-grid">
+      <div class="math-side">
+        <div class="math-title">Seus custos</div>
+        <div class="math-item">
+          <span class="math-item-label">Carta de crédito</span>
+          <span class="math-item-val">R$400.000</span>
+        </div>
+        <div class="math-item">
+          <span class="math-item-label">Parcela mensal</span>
+          <span class="math-item-val">R$2.800</span>
+        </div>
+        <div class="math-item">
+          <span class="math-item-label">Juros cobrados</span>
+          <span class="math-item-val">Nenhum</span>
+        </div>
+        <div class="math-item">
+          <span class="math-item-label">Entrada necessária</span>
+          <span class="math-item-val">Nenhuma</span>
+        </div>
+        <div class="math-item">
+          <span class="math-item-label">Em dólares (câmbio 5,8)</span>
+          <span class="math-item-val">≈ USD 483</span>
+        </div>
+      </div>
+      <div class="math-divider-line"></div>
+      <div class="math-side">
+        <div class="math-title">Sua renda</div>
+        <div class="math-item">
+          <span class="math-item-label">Imóvel de R$400k (short stay)</span>
+          <span class="math-item-val">R$8.000/mês</span>
+        </div>
+        <div class="math-item">
+          <span class="math-item-label">Gestão e despesas</span>
+          <span class="math-item-val">-R$400</span>
+        </div>
+        <div class="math-item total">
+          <span class="math-item-label">Resultado líquido estimado</span>
+          <span class="math-item-val">R$7.600</span>
+        </div>
+      </div>
+    </div>
+    <div class="math-profit">
+      <div>
+        <div class="mp-label">Sobra para você todo mês após a parcela</div>
+        <div style="font-size:13px; color:var(--cinza); margin-top:4px;">Imóvel pagando parcela + gerando lucro</div>
+      </div>
+      <div class="mp-val">+R$4.800</div>
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section class="timeline">
+  <div class="tl-inner">
+    <div class="section-ey">Da decisão à renda</div>
+    <h2>Em quanto tempo você<br>começa a receber?</h2>
+    <div class="tl-items">
+      <div class="tl-item">
+        <div class="tl-time"><div class="tl-time-val">Dia 1</div><div class="tl-time-label">hoje</div></div>
+        <div class="tl-line"></div>
+        <div class="tl-content"><h3>Consultoria gratuita</h3><p>Diagnóstico financeiro e montagem do plano personalizado com seu especialista.</p></div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-time"><div class="tl-time-val">Sem. 1-2</div><div class="tl-time-label">início</div></div>
+        <div class="tl-line"></div>
+        <div class="tl-content"><h3>Escolha e contratação do consórcio</h3><p>Selecionamos o melhor grupo com estratégia de contemplação acelerada.</p></div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-time"><div class="tl-time-val">Mês 1-3</div><div class="tl-time-label">em média</div></div>
+        <div class="tl-line"></div>
+        <div class="tl-content"><h3>Contemplação</h3><p>Com nossas estratégias de lance, a maioria dos clientes é contemplada nos primeiros meses.</p></div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-time"><div class="tl-time-val">Mês 3-5</div><div class="tl-time-label">após contemplação</div></div>
+        <div class="tl-line"></div>
+        <div class="tl-content"><h3>Aquisição e preparação do imóvel</h3><p>Escolhemos o imóvel ideal, formalizamos a compra e preparamos para locação.</p></div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-time"><div class="tl-time-val">Mês 5+</div><div class="tl-time-label">recorrente</div></div>
+        <div class="tl-line"></div>
+        <div class="tl-content"><h3>Renda na conta todo mês</h3><p>Imóvel ativo, gerando renda. Você recebe o relatório e o repasse mensal onde estiver.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARE -->
+<section class="compare">
+  <div class="compare-inner">
+    <div class="section-ey">Comparativo</div>
+    <h2>Por que consórcio vence<br>as alternativas</h2>
+    <div class="compare-table">
+      <div class="compare-header">
+        <div class="ch-cell">Critério</div>
+        <div class="ch-cell">Consórcio RFC</div>
+        <div class="ch-cell">Financiamento</div>
+        <div class="ch-cell">À Vista</div>
+      </div>
+      <div class="compare-row">
+        <div class="cr-cell">Juros</div>
+        <div class="cr-cell good highlight-col">Sem juros</div>
+        <div class="cr-cell bad">12-14% aa</div>
+        <div class="cr-cell">Sem juros</div>
+      </div>
+      <div class="compare-row">
+        <div class="cr-cell">Entrada necessária</div>
+        <div class="cr-cell good highlight-col">Nenhuma</div>
+        <div class="cr-cell bad">30% do valor</div>
+        <div class="cr-cell bad">100% do valor</div>
+      </div>
+      <div class="compare-row">
+        <div class="cr-cell">Comprovação de renda</div>
+        <div class="cr-cell good highlight-col">Não exigida</div>
+        <div class="cr-cell bad">Exigida</div>
+        <div class="cr-cell good">Não exigida</div>
+      </div>
+      <div class="compare-row">
+        <div class="cr-cell">Compra um imóvel por vez</div>
+        <div class="cr-cell good highlight-col">Múltiplas cartas</div>
+        <div class="cr-cell">Uma por vez</div>
+        <div class="cr-cell">Uma por vez</div>
+      </div>
+      <div class="compare-row">
+        <div class="cr-cell">Risco de pagar 3 imóveis pelo custo de 1</div>
+        <div class="cr-cell good highlight-col">Não</div>
+        <div class="cr-cell bad">Sim (juros)</div>
+        <div class="cr-cell good">Não</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FORM -->
+<section class="form-s" id="form">
+  <div class="form-s-inner">
+    <div class="section-ey">Dê o próximo passo</div>
+    <h2>Comece sua estratégia<br>de renda passiva hoje</h2>
+    <p class="form-s-sub">Preencha abaixo e um especialista entrará em contato para montar seu plano personalizado — com simulação real de retorno.</p>
+    <form class="form" id="leadForm">
+      <div class="form-row">
+        <input class="fi" type="text" name="nome" placeholder="Seu nome completo" required>
+
+        <div class="phone-wrap">
+          <input id="telefone" class="fi" type="tel" name="telefone" placeholder="WhatsApp" required>
+          <div id="telefone-status" style="font-size:12px; margin-top:6px; color:#807b74;"></div>
+        </div>
+      </div>
+
+      <input class="fi" type="email" name="email" placeholder="Seu e-mail" required>
+
+      <div class="form-row">
+        <select class="fi" name="pais" required>
+          <option value="">País onde você mora</option>
+          <option>Estados Unidos</option>
+          <option>Portugal</option>
+          <option>Reino Unido</option>
+          <option>França</option>
+          <option>Alemanha</option>
+          <option>Canadá</option>
+          <option>Itália</option>
+          <option>Suíça</option>
+          <option>Outro</option>
+        </select>
+
+        <select class="fi" name="capacidadeInvestimento" required>
+          <option value="">Investimento mensal (R$)</option>
+          <option>R$1.000 a R$2.000</option>
+          <option>R$2.000 a R$3.500</option>
+          <option>R$3.500 a R$5.000</option>
+          <option>Acima de R$5.000</option>
+        </select>
+      </div>
+
+      <button type="submit" class="btn-f" id="submitBtn" disabled>Quero minha estratégia de renda passiva →</button>
+      <p class="form-disc">Gratuito · Sem compromisso · Atendimento por WhatsApp ou videochamada</p>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <span>© 2025 Referência Capital · Assessoria Imobiliária para Brasileiros no Exterior</span>
+  <span>Privacidade · Termos</span>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/intlTelInput.min.js"></script>
+<script>
+  const WEBHOOK_URL = "https://nitro-app.referenciacapital.tech/webhook/leadsLP";
+  const VALIDAR_WHATSAPP_URL = "https://nitro-app.referenciacapital.tech/webhook/validarWhatsApp";
+  const API_KEY = "n8n.uA5GXxCvJrsexY$et9PyrScGy-nitro";
+
+  function getCookie(name) {
+    const match = document.cookie.match(new RegExp("(^| )" + name + "=([^;]+)"));
+    return match ? match[2] : "";
+  }
+
+  const telefoneInput = document.querySelector("#telefone");
+  const telefoneStatus = document.getElementById("telefone-status");
+  const submitBtn = document.getElementById("submitBtn");
+  const form = document.getElementById("leadForm");
+
+  const iti = window.intlTelInput(telefoneInput, {
+    initialCountry: "br",
+    preferredCountries: ["br", "us", "pt"],
+    separateDialCode: true,
+    nationalMode: true,
+    autoPlaceholder: "aggressive",
+    formatOnDisplay: true,
+    utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/utils.js"
+  });
+
+  let telefoneValidoWhatsapp = false;
+  let telefoneValidationTimeout;
+
+  function setTelefoneStatus(message, color) {
+    telefoneStatus.textContent = message;
+    telefoneStatus.style.color = color;
+  }
+
+  function aplicarMascaraTelefone() {
+    const countryData = iti.getSelectedCountryData();
+    const iso2 = countryData.iso2;
+    let valor = telefoneInput.value.replace(/\D/g, "");
+
+    if (iso2 === "br") {
+      if (valor.length > 11) valor = valor.slice(0, 11);
+      if (valor.length > 10) {
+        telefoneInput.value = valor.replace(/^(\d{2})(\d{5})(\d{0,4}).*/, "($1) $2-$3");
+      } else if (valor.length > 6) {
+        telefoneInput.value = valor.replace(/^(\d{2})(\d{4,5})(\d{0,4}).*/, "($1) $2-$3");
+      } else if (valor.length > 2) {
+        telefoneInput.value = valor.replace(/^(\d{2})(\d{0,5}).*/, "($1) $2");
+      } else {
+        telefoneInput.value = valor;
+      }
+      return;
+    }
+
+    if (iso2 === "us") {
+      if (valor.length > 10) valor = valor.slice(0, 10);
+      if (valor.length > 6) {
+        telefoneInput.value = valor.replace(/^(\d{3})(\d{3})(\d{0,4}).*/, "($1) $2-$3");
+      } else if (valor.length > 3) {
+        telefoneInput.value = valor.replace(/^(\d{3})(\d{0,3}).*/, "($1) $2");
+      } else {
+        telefoneInput.value = valor;
+      }
+      return;
+    }
+
+    if (iso2 === "pt") {
+      if (valor.length > 9) valor = valor.slice(0, 9);
+      if (valor.length > 6) {
+        telefoneInput.value = valor.replace(/^(\d{3})(\d{3})(\d{0,3}).*/, "$1 $2 $3");
+      } else if (valor.length > 3) {
+        telefoneInput.value = valor.replace(/^(\d{3})(\d{0,3}).*/, "$1 $2");
+      } else {
+        telefoneInput.value = valor;
+      }
+      return;
+    }
+
+    if (valor.length > 12) valor = valor.slice(0, 12);
+    telefoneInput.value = valor.replace(/(\d{3})(?=\d)/g, "$1 ").trim();
+  }
+
+  async function validarWhatsApp() {
+    const numeroLimpo = iti.getNumber().replace(/\D/g, "");
+
+    telefoneValidoWhatsapp = false;
+    submitBtn.disabled = true;
+
+    if (!numeroLimpo || numeroLimpo.length < 10) {
+      setTelefoneStatus("Digite um número válido com DDI.", "#ff8a8a");
+      return;
+    }
+
+    if (!iti.isValidNumber()) {
+      setTelefoneStatus("Formato de número inválido.", "#ff8a8a");
+      return;
+    }
+
+    setTelefoneStatus("Validando WhatsApp...", "#c9a84c");
+
+    try {
+      const response = await fetch(`${VALIDAR_WHATSAPP_URL}?telefone=${encodeURIComponent(numeroLimpo)}`, {
+        method: "GET",
+        headers: {
+          "api-key": API_KEY
+        }
+      });
+
+      const data = await response.json();
+      const resultado = Array.isArray(data) ? data[0] : data;
+
+      const whatsappExiste =
+              resultado &&
+              (
+                      resultado.existe === true ||
+                      resultado.existe === "true" ||
+                      resultado.exists === true ||
+                      resultado.exists === "true"
+              );
+
+      if (whatsappExiste) {
+        telefoneValidoWhatsapp = true;
+        submitBtn.disabled = false;
+        setTelefoneStatus("WhatsApp válido.", "#7ed957");
+      } else {
+        telefoneValidoWhatsapp = false;
+        submitBtn.disabled = true;
+        setTelefoneStatus("Número de WhatsApp inválido.", "#ff8a8a");
+      }
+    } catch (error) {
+      console.error("Erro ao validar WhatsApp:", error);
+      telefoneValidoWhatsapp = false;
+      submitBtn.disabled = true;
+      setTelefoneStatus("Não foi possível validar o número.", "#ff8a8a");
+    }
+  }
+
+  telefoneInput.addEventListener("input", function () {
+    aplicarMascaraTelefone();
+    telefoneValidoWhatsapp = false;
+    submitBtn.disabled = true;
+    setTelefoneStatus("Digitando...", "#807b74");
+
+    clearTimeout(telefoneValidationTimeout);
+    telefoneValidationTimeout = setTimeout(() => {
+      validarWhatsApp();
+    }, 800);
+  });
+
+  telefoneInput.addEventListener("blur", function () {
+    clearTimeout(telefoneValidationTimeout);
+    validarWhatsApp();
+  });
+
+  telefoneInput.addEventListener("countrychange", function () {
+    telefoneInput.value = "";
+    telefoneValidoWhatsapp = false;
+    submitBtn.disabled = true;
+    setTelefoneStatus("", "#807b74");
+  });
+
+  form.addEventListener("submit", async function(e) {
+    e.preventDefault();
+
+    if (!telefoneValidoWhatsapp) {
+      setTelefoneStatus("Número de WhatsApp inválido.", "#ff8a8a");
+      return;
+    }
+
+    const formData = new FormData(this);
+
+    const payload = {
+      nome: formData.get("nome"),
+      telefone: iti.getNumber().replace(/\D/g, ""),
+      email: formData.get("email"),
+      pais: formData.get("pais"),
+      capacidadeInvestimento: formData.get("capacidadeInvestimento"),
+      utmSource: window.location.href,
+      produto: "Consórcio Brasileiro",
+      _fbc: getCookie("_fbc"),
+      _fbp: getCookie("_fbp"),
+      trafficSource: "Paid",
+      first_traffic_source: "Paid"
+    };
+
+    try {
+      const res = await fetch(WEBHOOK_URL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "api-key": API_KEY
+        },
+        body: JSON.stringify(payload)
+      });
+
+      if (res.ok) {
+        fbq("track", "Lead", {
+          value: 1,
+          currency: "BRL"
+        });
+
+        setTimeout(() => {
+          window.location.href = "https://referenciacapital.com.br/investimento-estrangeiros-obrigado/";
+        }, 500);
+      } else {
+        alert("Erro ao enviar.");
+      }
+    } catch (err) {
+      console.error(err);
+      alert("Erro de conexão.");
+    }
+  });
+</script>
+</body>
+</html>
