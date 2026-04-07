@@ -52,7 +52,7 @@
   .hv-divider { grid-column: span 2; height: 1px; background: rgba(201,168,76,0.1); }
 
   /* THE MATH */
-  .math { padding: 100px 72px; background: var(--verde); }
+  .math { padding: clamp(60px, 8vw, 100px) clamp(20px, 6vw, 72px); background: var(--verde); }
   .math-inner { max-width: 900px; margin: 0 auto; }
   .section-ey { font-size: 11px; text-transform: uppercase; letter-spacing: 3px; color: var(--ouro); font-weight: 600; margin-bottom: 20px; }
   h2 { font-family: 'Syne', sans-serif; font-size: clamp(32px, 4vw, 54px); font-weight: 800; color: var(--branco); margin-bottom: 48px; line-height: 1.05; letter-spacing: -0.5px; }
@@ -71,7 +71,7 @@
   .mp-val { font-family: 'Syne', sans-serif; font-size: 36px; font-weight: 800; color: var(--ouro-claro); }
 
   /* TIMELINE */
-  .timeline { padding: 100px 72px; }
+  .timeline { padding: clamp(60px, 8vw, 100px) clamp(20px, 6vw, 72px); }
   .tl-inner { max-width: 840px; margin: 0 auto; }
   .tl-items { display: flex; flex-direction: column; gap: 0; margin-top: 60px; }
   .tl-item { display: grid; grid-template-columns: 120px 2px 1fr; gap: 0 28px; padding-bottom: 40px; }
@@ -88,7 +88,7 @@
   .tl-content p { font-size: 14px; color: var(--cinza); line-height: 1.65; }
 
   /* COMPARE */
-  .compare { background: var(--verde2); padding: 100px 72px; }
+  .compare { background: var(--verde2); padding: clamp(60px, 8vw, 100px) clamp(20px, 6vw, 72px); }
   .compare-inner { max-width: 900px; margin: 0 auto; }
   .compare-table { margin-top: 60px; border: 1px solid rgba(201,168,76,0.12); }
   .compare-header { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 0; background: rgba(201,168,76,0.06); }
@@ -103,7 +103,7 @@
   .cr-cell.highlight-col { background: rgba(201,168,76,0.03); }
 
   /* FORM */
-  .form-s { padding: 100px 72px; }
+  .form-s { padding: clamp(60px, 8vw, 100px) clamp(20px, 6vw, 72px); }
   .form-s-inner { max-width: 640px; margin: 0 auto; }
   .form-s h2 { margin-bottom: 12px; }
   .form-s-sub { font-size: 18px; color: rgba(248,245,235,0.6); line-height: 1.65; margin-bottom: 48px; }
@@ -115,6 +115,20 @@
   .btn-f { background: var(--ouro); color: var(--preto); font-size: 16px; font-weight: 700; padding: 20px; width: 100%; border: none; cursor: pointer; font-family: 'DM Sans', sans-serif; transition: background 0.2s; margin-top: 8px; }
   .btn-f:hover { background: var(--ouro-claro); }
   .form-disc { font-size: 12px; color: var(--cinza); text-align: center; margin-top: 12px; }
+
+  .compare-table {
+    overflow-x: auto;
+  }
+
+  .compare-header,
+  .compare-row {
+    min-width: 600px;
+  }
+
+  .hero-visual {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  }
 
   .iti {
     width: 100%;
@@ -215,14 +229,111 @@
     .hero { padding: 80px 24px 60px; }
     .math { padding: 60px 24px; }
     .math-grid { grid-template-columns: 1fr; }
+    /* NAV */
+    nav { padding: 18px 20px; }
+    .btn-nav { font-size: 12px; padding: 9px 16px; }
+
+    /* HERO — fix big number overflow (bug 1) */
+    .hero { padding: 64px 20px 48px; }
+    .hero-big-number {
+      font-size: clamp(52px, 18vw, 80px);
+      letter-spacing: -1px;
+    }
+    .hero-number-label { font-size: clamp(16px, 4.5vw, 22px); }
+    .hero-desc { font-size: 16px; margin-bottom: 36px; }
+    .btn-hero { font-size: 15px; padding: 17px 32px; }
+
+    /* HERO VISUAL */
+    .hero-visual { padding: 20px; gap: 16px; margin-top: 40px; }
+    .hv-val { font-size: 22px; }
+
+    /* MATH SECTION */
+    .math { padding: 56px 20px; }
+    .math-grid { grid-template-columns: 1fr; gap: 32px; }
     .math-divider-line { height: 1px; width: 100%; }
     .timeline { padding: 60px 24px; }
     .tl-item { grid-template-columns: 80px 2px 1fr; }
     .compare { padding: 60px 24px; }
     .form-s { padding: 60px 24px; }
+    .math-item-val { font-size: 17px; }
+    .math-item.total .math-item-val { font-size: 22px; }
+
+    /* MATH PROFIT — fix word-wrap bug (bug 2) */
+    .math-profit {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 20px;
+    }
+    .mp-label { font-size: 13px; line-height: 1.5; max-width: 100%; }
+    .mp-val { font-size: 40px; }
+
+    /* TIMELINE */
+    .timeline { padding: 56px 20px; }
+    .tl-item { grid-template-columns: 72px 2px 1fr; gap: 0 16px; }
+    .tl-time-val { font-size: 17px; }
+    .tl-content h3 { font-size: 17px; }
+
+    /* COMPARE TABLE — replace 4-col grid with stacked cards (bug 3) */
+    .compare { padding: 56px 20px; }
+    .compare-table { border: none; }
+
+    .compare-header { display: none; }
+
+    .compare-row {
+      display: flex;
+      flex-direction: column;
+      border: 1px solid rgba(255,255,255,0.05);
+      border-top: 2px solid rgba(201,168,76,0.15);
+      margin-bottom: 2px;
+      padding: 0;
+    }
+    .compare-row:first-of-type { border-top-color: rgba(201,168,76,0.3); }
+
+    .cr-cell {
+      padding: 12px 16px;
+      border-left: none !important;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+      font-size: 13px;
+      text-align: left !important;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+    .cr-cell:first-child {
+      background: rgba(255,255,255,0.03);
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--branco);
+      border-bottom: 1px solid rgba(201,168,76,0.12);
+      display: block;
+      padding: 14px 16px;
+    }
+    .cr-cell:not(:first-child)::before {
+      content: attr(data-col);
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--cinza);
+      flex-shrink: 0;
+      min-width: 90px;
+    }
+    .cr-cell:last-child { border-bottom: none; }
+
+    /* FORM */
+    .form-s { padding: 56px 20px; }
+    .form-s-sub { font-size: 16px; margin-bottom: 32px; }
     .form-row { grid-template-columns: 1fr; }
     .hero-visual { padding: 24px; }
     footer { flex-direction: column; gap: 10px; padding: 24px; }
+
+    footer { flex-direction: column; gap: 10px; padding: 24px 20px; text-align: center; }
+  }
+
+  @media (max-width: 400px) {
+    .hero-big-number { font-size: clamp(44px, 17vw, 64px); letter-spacing: -0.5px; }
+    .mp-val { font-size: 34px; }
   }
 </style>
   <!-- Meta Pixel -->
@@ -413,30 +524,45 @@
         <div class="cr-cell good highlight-col">Sem juros</div>
         <div class="cr-cell bad">12-14% aa</div>
         <div class="cr-cell">Sem juros</div>
+        <div class="cr-cell good highlight-col" data-col="Consórcio RFC">Sem juros</div>
+        <div class="cr-cell bad" data-col="Financiamento">12-14% aa</div>
+        <div class="cr-cell" data-col="À Vista">Sem juros</div>
       </div>
       <div class="compare-row">
         <div class="cr-cell">Entrada necessária</div>
         <div class="cr-cell good highlight-col">Nenhuma</div>
         <div class="cr-cell bad">30% do valor</div>
         <div class="cr-cell bad">100% do valor</div>
+        <div class="cr-cell good highlight-col" data-col="Consórcio RFC">Nenhuma</div>
+        <div class="cr-cell bad" data-col="Financiamento">30% do valor</div>
+        <div class="cr-cell bad" data-col="À Vista">100% do valor</div>
       </div>
       <div class="compare-row">
         <div class="cr-cell">Comprovação de renda</div>
         <div class="cr-cell good highlight-col">Não exigida</div>
         <div class="cr-cell bad">Exigida</div>
         <div class="cr-cell good">Não exigida</div>
+        <div class="cr-cell good highlight-col" data-col="Consórcio RFC">Não exigida</div>
+        <div class="cr-cell bad" data-col="Financiamento">Exigida</div>
+        <div class="cr-cell good" data-col="À Vista">Não exigida</div>
       </div>
       <div class="compare-row">
         <div class="cr-cell">Compra um imóvel por vez</div>
         <div class="cr-cell good highlight-col">Múltiplas cartas</div>
         <div class="cr-cell">Uma por vez</div>
         <div class="cr-cell">Uma por vez</div>
+        <div class="cr-cell good highlight-col" data-col="Consórcio RFC">Múltiplas cartas</div>
+        <div class="cr-cell" data-col="Financiamento">Uma por vez</div>
+        <div class="cr-cell" data-col="À Vista">Uma por vez</div>
       </div>
       <div class="compare-row">
         <div class="cr-cell">Risco de pagar 3 imóveis pelo custo de 1</div>
         <div class="cr-cell good highlight-col">Não</div>
         <div class="cr-cell bad">Sim (juros)</div>
         <div class="cr-cell good">Não</div>
+        <div class="cr-cell good highlight-col" data-col="Consórcio RFC">Não</div>
+        <div class="cr-cell bad" data-col="Financiamento">Sim (juros)</div>
+        <div class="cr-cell good" data-col="À Vista">Não</div>
       </div>
     </div>
   </div>
@@ -459,7 +585,7 @@
           <div id="telefone-status" style="font-size:12px; margin-top:6px; color:#807b74;"></div>
         </div>
       </div>
-      
+
         <select class="fi" name="capacidadeInvestimento" required>
           <option value="">Investimento mensal (R$)</option>
           <option>R$1.000 a R$2.000</option>
