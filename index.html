@@ -36,8 +36,7 @@
   .eyebrow-row { display: flex; align-items: center; justify-content: center; gap: 16px; margin-bottom: 32px; }
   .eyebrow-line { flex: 1; max-width: 80px; height: 1px; background: rgba(201,168,76,0.3); }
   .eyebrow { font-size: 12px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--ouro); }
-  .hero-big-number { font-family: 'Syne', sans-serif; font-size: clamp(80px, 15vw, 180px); font-weight: 800; line-height: 0.9; color: var(--ouro-claro); letter-spacing: -3px; margin-bottom: 4px; }
-  .hero-number-label { font-family: 'Syne', sans-serif; font-size: clamp(20px, 3vw, 34px); font-weight: 600; color: rgba(248,245,235,0.5); margin-bottom: 32px; letter-spacing: -0.5px; }
+.hero-big-number { font-family: 'Syne', sans-serif; font-size: clamp(44px, 14vw, 180px); font-weight: 800; line-height: 1; color: var(--ouro-claro); letter-spacing: -1px; margin-bottom: 4px; word-break: keep-all; overflow-wrap: normal;}  .hero-number-label { font-family: 'Syne', sans-serif; font-size: clamp(20px, 3vw, 34px); font-weight: 600; color: rgba(248,245,235,0.5); margin-bottom: 32px; letter-spacing: -0.5px; }
   .hero-desc { font-size: clamp(16px, 2vw, 21px); font-weight: 300; color: rgba(248,245,235,0.62); max-width: 680px; margin: 0 auto 52px; line-height: 1.65; }
   .hero-desc strong { color: var(--branco); font-weight: 500; }
   .btn-hero { display: inline-block; background: var(--ouro); color: var(--preto); font-size: 17px; font-weight: 600; padding: 20px 52px; text-decoration: none; transition: background 0.2s; border: none; cursor: pointer; font-family: 'DM Sans', sans-serif; }
@@ -236,8 +235,9 @@
     /* HERO — fix big number overflow (bug 1) */
     .hero { padding: 64px 20px 48px; }
     .hero-big-number {
-      font-size: clamp(52px, 18vw, 80px);
-      letter-spacing: -1px;
+    font-size: clamp(42px, 16vw, 72px);
+    letter-spacing: 0;
+    line-height: 1.05;
     }
     .hero-number-label { font-size: clamp(16px, 4.5vw, 22px); }
     .hero-desc { font-size: 16px; margin-bottom: 36px; }
